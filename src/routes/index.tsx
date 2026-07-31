@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
 });
 
 const IG = "https://www.instagram.com/importados_caballito_/";
-const TT = "https://www.tiktok.com/@importados_caballito_";
+const TT = "https://www.tiktok.com/@importados_caball";
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
