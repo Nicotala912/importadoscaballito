@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MapPin, Truck, ShieldCheck, MessageCircle, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero.jpg";
-import airpodsImg from "@/assets/airpods.jpg";
-import fundasImg from "@/assets/fundas.jpg";
-import accesoriosImg from "@/assets/accesorios.jpg";
+import heroAsset from "@/assets/hero-real.jpeg.asset.json";
+import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
+import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
+import accesoriosAsset from "@/assets/accesorios-real.jpeg.asset.json";
 
 const TITLE = "Importados Caballito | AirPods y fundas en CABA";
 const DESC =
@@ -31,19 +31,19 @@ const productos = [
   {
     nombre: "AirPods 2 Pro",
     desc: "Audio premium, cancelación de ruido y la mejor calidad del mercado.",
-    img: airpodsImg,
+    img: airpodsAsset.url,
     tags: ["Audio premium", "ANC", "Garantía"],
   },
   {
     nombre: "Fundas",
     desc: "Todos los modelos, el color que más te guste. Calidad premium.",
-    img: fundasImg,
+    img: fundasAsset.url,
     tags: ["Todos los modelos", "+30 colores"],
   },
   {
     nombre: "Accesorios",
     desc: "Cables, cargadores y power banks para tu día a día.",
-    img: accesoriosImg,
+    img: accesoriosAsset.url,
     tags: ["Cables", "Cargadores", "Power banks"],
   },
 ];
@@ -113,11 +113,11 @@ function Index() {
             </div>
             <div className="relative">
               <img
-                src={heroImg}
-                alt="AirPods y funda de silicona sobre escritorio oscuro"
-                width={1600}
-                height={1008}
-                className="w-full rounded-3xl border border-border object-cover shadow-card"
+                src={heroAsset.url}
+                alt="Battery Pack MagSafe en el local de Importados Caballito"
+                width={1200}
+                height={1600}
+                className="aspect-[4/5] w-full rounded-3xl border border-border object-cover shadow-card"
               />
               <div className="absolute -bottom-5 left-5 rounded-2xl border border-primary/30 bg-card px-5 py-3 shadow-glow">
                 <p className="font-display text-lg text-foreground">AirPods + Funda</p>
