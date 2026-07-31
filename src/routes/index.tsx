@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, MapPin, Truck, ShieldCheck, MessageCircle, Headphones } from "lucide-react";
+import { Instagram, MapPin, Truck, ShieldCheck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
@@ -141,7 +141,7 @@ function Index() {
             {[
               { icon: Truck, t: "Envíos a todo el país", d: "Despachamos en 24hs hábiles." },
               { icon: ShieldCheck, t: "Calidad premium", d: "Productos testeados uno por uno." },
-              { icon: Headphones, t: "Atención personalizada", d: "Te asesoramos por WhatsApp o MD." },
+              { icon: Headphones, t: "Atención personalizada", d: "Te asesoramos por MD de Instagram." },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex items-start gap-3">
                 <Icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
