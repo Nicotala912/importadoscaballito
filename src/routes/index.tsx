@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MapPin, Truck, ShieldCheck, MessageCircle, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroAsset from "@/assets/hero-real.jpeg.asset.json";
+import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
 import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
 import accesoriosAsset from "@/assets/accesorios-real.jpeg.asset.json";
@@ -114,7 +114,7 @@ function Index() {
             <div className="relative">
               <img
                 src={heroAsset.url}
-                alt="Battery Pack MagSafe en el local de Importados Caballito"
+                alt="Combo AirPods 2 Pro y funda celeste en Importados Caballito"
                 width={1200}
                 height={1600}
                 className="aspect-[4/5] w-full rounded-3xl border border-border object-cover shadow-card"
