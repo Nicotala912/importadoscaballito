@@ -25,7 +25,15 @@ export const Route = createFileRoute("/")({
 });
 
 const IG = "https://instagram.com/importados_caballito_";
-const WA = "https://wa.me/?text=Hola%20Importados%20Caballito!%20Quiero%20consultar%20por%20un%20producto";
+const TT = "https://www.tiktok.com/@importados_caballito_";
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={className ?? "h-4 w-4"}>
+      <path d="M16.5 2h-2.9v14.1a2.6 2.6 0 1 1-2.6-2.6c.2 0 .5 0 .7.1v-3a5.6 5.6 0 1 0 4.8 5.5V9.4c1 .7 2.2 1.1 3.5 1.2V7.7a4.2 4.2 0 0 1-3.5-4.1V2z" />
+    </svg>
+  );
+}
 
 const productos = [
   {
@@ -100,13 +108,13 @@ function Index() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="shadow-glow">
-                  <a href={WA} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle /> Comprar por WhatsApp
+                  <a href={IG} target="_blank" rel="noopener noreferrer">
+                    <Instagram /> Comprar por Instagram
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> Ver Instagram
+                  <a href={TT} target="_blank" rel="noopener noreferrer">
+                    <TikTokIcon /> Ver TikTok
                   </a>
                 </Button>
               </div>
@@ -182,8 +190,8 @@ function Index() {
                     ))}
                   </div>
                   <Button asChild variant="secondary" className="mt-6 w-full">
-                    <a href={WA} target="_blank" rel="noopener noreferrer">
-                      Consultar precio
+                    <a href={IG} target="_blank" rel="noopener noreferrer">
+                      <Instagram /> Consultar precio por IG
                     </a>
                   </Button>
                 </div>
@@ -227,13 +235,13 @@ function Index() {
               </p>
               <div className="mt-7 flex flex-col gap-3">
                 <Button asChild size="lg">
-                  <a href={WA} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle /> WhatsApp
+                  <a href={IG} target="_blank" rel="noopener noreferrer">
+                    <Instagram /> @importados_caballito_
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> @importados_caballito_
+                  <a href={TT} target="_blank" rel="noopener noreferrer">
+                    <TikTokIcon /> TikTok
                   </a>
                 </Button>
               </div>
