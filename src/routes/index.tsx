@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MapPin, Truck, ShieldCheck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
 import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
@@ -24,8 +25,32 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const IG = "https://www.instagram.com/importados_caballito_/";
+const IG_CHAT = "https://ig.me/m/importados_caballito_";
 const TT = "https://www.tiktok.com/@importados_caball?is_from_webapp=1&sender_device=mobile";
+
+function IgChatButton({
+  mensaje,
+  children,
+  ...props
+}: React.ComponentProps<typeof Button> & { mensaje: string }) {
+  const handleClick = async () => {
+    try {
+      await navigator.clipboard.writeText(mensaje);
+      toast.success("Mensaje copiado", {
+        description: "Pegalo en el chat de Instagram y enviálo.",
+      });
+    } catch {
+      toast("Abriendo el chat de Instagram");
+    }
+    window.open(IG_CHAT, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <Button type="button" onClick={handleClick} {...props}>
+      {children}
+    </Button>
+  );
+}
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -83,11 +108,9 @@ function Index() {
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
             <a href="#contacto" className="transition-colors hover:text-foreground">Contacto</a>
           </nav>
-          <Button asChild size="sm">
-            <a href={IG} target="_blank" rel="noopener noreferrer">
-              <Instagram /> Consultar
-            </a>
-          </Button>
+          <IgChatButton size="sm" mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊">
+            <Instagram /> Consultar
+          </IgChatButton>
         </div>
       </header>
 
@@ -107,11 +130,13 @@ function Index() {
                 en CABA y envíos a todo el país.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="shadow-glow">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> Comprar por Instagram
-                  </a>
-                </Button>
+                <IgChatButton
+                  size="lg"
+                  className="shadow-glow"
+                  mensaje="¡Hola Importados Caballito! Quiero comprar el combo AirPods + funda. ¿Me pasan precio y stock?"
+                >
+                  <Instagram /> Comprar por Instagram
+                </IgChatButton>
                 <Button asChild size="lg" variant="outline">
                   <a href={TT} target="_blank" rel="noopener noreferrer">
                     <TikTokIcon /> Ver TikTok
@@ -189,11 +214,13 @@ function Index() {
                       </span>
                     ))}
                   </div>
-                  <Button asChild variant="secondary" className="mt-6 w-full">
-                    <a href={IG} target="_blank" rel="noopener noreferrer">
-                      <Instagram /> Consultar precio por IG
-                    </a>
-                  </Button>
+                  <IgChatButton
+                    variant="secondary"
+                    className="mt-6 w-full"
+                    mensaje={`¡Hola Importados Caballito! Me interesa: ${p.nombre}. ¿Me pasan precio y stock?`}
+                  >
+                    <Instagram /> Consultar precio por IG
+                  </IgChatButton>
                 </div>
               </article>
             ))}
@@ -234,11 +261,12 @@ function Index() {
                 Respondemos todos los días. Contanos qué estás buscando y te armamos el mejor precio.
               </p>
               <div className="mt-7 flex flex-col gap-3">
-                <Button asChild size="lg">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> @importados_caballito_
-                  </a>
-                </Button>
+                <IgChatButton
+                  size="lg"
+                  mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊"
+                >
+                  <Instagram /> @importados_caballito_
+                </IgChatButton>
                 <Button asChild size="lg" variant="outline">
                   <a href={TT} target="_blank" rel="noopener noreferrer">
                     <TikTokIcon /> TikTok
