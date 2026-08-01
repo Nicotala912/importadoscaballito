@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MapPin, Truck, ShieldCheck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
 import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
@@ -25,7 +26,32 @@ export const Route = createFileRoute("/")({
 });
 
 const IG = "https://www.instagram.com/importados_caballito_/";
+const IG_CHAT = "https://ig.me/m/importados_caballito_";
 const TT = "https://www.tiktok.com/@importados_caball?is_from_webapp=1&sender_device=mobile";
+
+function IgChatButton({
+  mensaje,
+  children,
+  ...props
+}: React.ComponentProps<typeof Button> & { mensaje: string }) {
+  const handleClick = async () => {
+    try {
+      await navigator.clipboard.writeText(mensaje);
+      toast.success("Mensaje copiado", {
+        description: "Pegalo en el chat de Instagram y enviálo.",
+      });
+    } catch {
+      toast("Abriendo el chat de Instagram");
+    }
+    window.open(IG_CHAT, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <Button type="button" onClick={handleClick} {...props}>
+      {children}
+    </Button>
+  );
+}
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
