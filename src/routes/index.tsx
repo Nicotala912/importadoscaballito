@@ -114,7 +114,6 @@ function Index() {
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
             <a href="#contacto" className="transition-colors hover:text-foreground">Contacto</a>
           </nav>
-          <IgChatButton size="sm" mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊">
           <IgChatButton
             size="sm"
             mensaje="¡Hola Importados Caballito! 👋 Entré a su página y quería hacerles una consulta 😊"
