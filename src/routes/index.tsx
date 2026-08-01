@@ -252,7 +252,7 @@ function Index() {
           <p className="mt-3 max-w-lg text-muted-foreground">
             Consultá stock y precios actualizados por mensaje directo.
           </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {productos.map((p) => (
               <article
                 key={p.nombre}
