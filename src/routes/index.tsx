@@ -109,11 +109,9 @@ function Index() {
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
             <a href="#contacto" className="transition-colors hover:text-foreground">Contacto</a>
           </nav>
-          <Button asChild size="sm">
-            <a href={IG} target="_blank" rel="noopener noreferrer">
-              <Instagram /> Consultar
-            </a>
-          </Button>
+          <IgChatButton size="sm" mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊">
+            <Instagram /> Consultar
+          </IgChatButton>
         </div>
       </header>
 
@@ -133,11 +131,13 @@ function Index() {
                 en CABA y envíos a todo el país.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="shadow-glow">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> Comprar por Instagram
-                  </a>
-                </Button>
+                <IgChatButton
+                  size="lg"
+                  className="shadow-glow"
+                  mensaje="¡Hola Importados Caballito! Quiero comprar el combo AirPods + funda. ¿Me pasan precio y stock?"
+                >
+                  <Instagram /> Comprar por Instagram
+                </IgChatButton>
                 <Button asChild size="lg" variant="outline">
                   <a href={TT} target="_blank" rel="noopener noreferrer">
                     <TikTokIcon /> Ver TikTok
@@ -215,11 +215,13 @@ function Index() {
                       </span>
                     ))}
                   </div>
-                  <Button asChild variant="secondary" className="mt-6 w-full">
-                    <a href={IG} target="_blank" rel="noopener noreferrer">
-                      <Instagram /> Consultar precio por IG
-                    </a>
-                  </Button>
+                  <IgChatButton
+                    variant="secondary"
+                    className="mt-6 w-full"
+                    mensaje={`¡Hola Importados Caballito! Me interesa: ${p.nombre}. ¿Me pasan precio y stock?`}
+                  >
+                    <Instagram /> Consultar precio por IG
+                  </IgChatButton>
                 </div>
               </article>
             ))}
@@ -260,11 +262,12 @@ function Index() {
                 Respondemos todos los días. Contanos qué estás buscando y te armamos el mejor precio.
               </p>
               <div className="mt-7 flex flex-col gap-3">
-                <Button asChild size="lg">
-                  <a href={IG} target="_blank" rel="noopener noreferrer">
-                    <Instagram /> @importados_caballito_
-                  </a>
-                </Button>
+                <IgChatButton
+                  size="lg"
+                  mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊"
+                >
+                  <Instagram /> @importados_caballito_
+                </IgChatButton>
                 <Button asChild size="lg" variant="outline">
                   <a href={TT} target="_blank" rel="noopener noreferrer">
                     <TikTokIcon /> TikTok
