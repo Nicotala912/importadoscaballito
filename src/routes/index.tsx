@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, MapPin, Truck, ShieldCheck, Headphones } from "lucide-react";
+import { useState } from "react";
+import { Instagram, MapPin, Truck, ShieldCheck, Headphones, Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { toast } from "sonner";
 import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
@@ -33,22 +41,61 @@ function IgChatButton({
   children,
   ...props
 }: React.ComponentProps<typeof Button> & { mensaje: string }) {
-  const handleClick = async () => {
+  const [open, setOpen] = useState(false);
+  const [copiado, setCopiado] = useState(false);
+
+  const copiar = async () => {
     try {
       await navigator.clipboard.writeText(mensaje);
-      toast.success("Mensaje copiado", {
-        description: "Pegalo en el chat de Instagram y enviálo.",
-      });
+      setCopiado(true);
+      toast.success("Mensaje copiado");
+      setTimeout(() => setCopiado(false), 2000);
+      return true;
     } catch {
-      toast("Abriendo el chat de Instagram");
+      toast("Seleccioná el texto y copialo a mano");
+      return false;
     }
-    window.open(IG_CHAT, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <Button type="button" onClick={handleClick} {...props}>
-      {children}
-    </Button>
+    <>
+      <Button type="button" onClick={() => setOpen(true)} {...props}>
+        {children}
+      </Button>
+
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="font-display">Tu mensaje está listo</DialogTitle>
+            <DialogDescription>
+              Instagram no deja escribir el texto por vos: copialo acá y pegalo en el chat (mantené
+              apretado y "Pegar").
+            </DialogDescription>
+          </DialogHeader>
+
+          <p className="select-all rounded-2xl border border-border bg-muted/40 p-4 text-sm text-foreground">
+            {mensaje}
+          </p>
+
+          <div className="flex flex-col gap-2 sm:flex-row">
+            <Button type="button" variant="outline" className="sm:flex-1" onClick={copiar}>
+              {copiado ? <Check /> : <Copy />} {copiado ? "Copiado" : "Copiar mensaje"}
+            </Button>
+            <Button
+              type="button"
+              className="sm:flex-1"
+              onClick={async () => {
+                await copiar();
+                window.open(IG_CHAT, "_blank", "noopener,noreferrer");
+                setOpen(false);
+              }}
+            >
+              <Instagram /> Copiar y abrir chat
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 
