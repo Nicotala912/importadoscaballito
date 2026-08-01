@@ -14,6 +14,7 @@ import heroAsset from "@/assets/combo-real.jpeg.asset.json";
 import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
 import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
 import accesoriosAsset from "@/assets/accesorios-real.jpeg.asset.json";
+import victoriaAsset from "@/assets/victoria-secret.png.asset.json";
 
 const TITLE = "Importados Caballito | AirPods y fundas en CABA";
 const DESC =
@@ -131,6 +132,14 @@ const productos = [
     tags: ["Cables", "Cargadores", "Power banks"],
     mensaje:
       "¡Hola Importados Caballito! 👋 Me interesan los accesorios (cables, cargadores o power bank) ⚡ ¿Me pasan precios y qué tienen en stock hoy?",
+  },
+  {
+    nombre: "Victoria's Secret",
+    desc: "Body mist originales importados. Fragancias que duran todo el día.",
+    img: victoriaAsset.url,
+    tags: ["Originales", "Body mist", "250ml"],
+    mensaje:
+      "¡Hola Importados Caballito! 👋 Vi los Victoria's Secret en su página 🌸 ¿Qué fragancias tienen disponibles? Me pasan precio y envío por favor ✨",
   },
 ];
 
