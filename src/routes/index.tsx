@@ -66,18 +66,24 @@ const productos = [
     desc: "Audio premium, cancelación de ruido y la mejor calidad del mercado.",
     img: airpodsAsset.url,
     tags: ["Audio premium", "ANC", "Garantía"],
+    mensaje:
+      "¡Hola Importados Caballito! 👋 Vi los AirPods 2 Pro en su página y me encantaron 🎧 ¿Me pasan precio, stock y formas de pago? Quiero aprovechar la promo 🔥",
   },
   {
     nombre: "Fundas",
     desc: "Todos los modelos, el color que más te guste. Calidad premium.",
     img: fundasAsset.url,
     tags: ["Todos los modelos", "+30 colores"],
+    mensaje:
+      "¡Hola Importados Caballito! 👋 Estoy buscando una funda 📱 ¿Qué colores tienen disponibles para mi modelo? Me interesa precio y envío 💚",
   },
   {
     nombre: "Accesorios",
     desc: "Cables, cargadores y power banks para tu día a día.",
     img: accesoriosAsset.url,
     tags: ["Cables", "Cargadores", "Power banks"],
+    mensaje:
+      "¡Hola Importados Caballito! 👋 Me interesan los accesorios (cables, cargadores o power bank) ⚡ ¿Me pasan precios y qué tienen en stock hoy?",
   },
 ];
 
@@ -108,7 +114,10 @@ function Index() {
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
             <a href="#contacto" className="transition-colors hover:text-foreground">Contacto</a>
           </nav>
-          <IgChatButton size="sm" mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊">
+          <IgChatButton
+            size="sm"
+            mensaje="¡Hola Importados Caballito! 👋 Entré a su página y quería hacerles una consulta 😊"
+          >
             <Instagram /> Consultar
           </IgChatButton>
         </div>
@@ -133,7 +142,7 @@ function Index() {
                 <IgChatButton
                   size="lg"
                   className="shadow-glow"
-                  mensaje="¡Hola Importados Caballito! Quiero comprar el combo AirPods + funda. ¿Me pasan precio y stock?"
+                  mensaje="¡Hola Importados Caballito! 👋 Quiero aprovechar la promo combo AirPods 2 Pro + funda 🎧📱 ¿Me pasan precio final, colores disponibles y cómo sigo la compra? 🔥"
                 >
                   <Instagram /> Comprar por Instagram
                 </IgChatButton>
@@ -217,7 +226,7 @@ function Index() {
                   <IgChatButton
                     variant="secondary"
                     className="mt-6 w-full"
-                    mensaje={`¡Hola Importados Caballito! Me interesa: ${p.nombre}. ¿Me pasan precio y stock?`}
+                    mensaje={p.mensaje}
                   >
                     <Instagram /> Consultar precio por IG
                   </IgChatButton>
@@ -263,7 +272,7 @@ function Index() {
               <div className="mt-7 flex flex-col gap-3">
                 <IgChatButton
                   size="lg"
-                  mensaje="¡Hola Importados Caballito! Quería hacer una consulta 😊"
+                  mensaje="¡Hola Importados Caballito! 👋 Vi su web y quiero asesoramiento para elegir mi producto ✨ ¿Me ayudan con precios y envío?"
                 >
                   <Instagram /> @importados_caballito_
                 </IgChatButton>
