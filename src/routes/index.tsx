@@ -15,10 +15,11 @@ import airpodsAsset from "@/assets/airpods-real.jpeg.asset.json";
 import fundasAsset from "@/assets/fundas-real.jpeg.asset.json";
 import accesoriosAsset from "@/assets/accesorios-real.jpeg.asset.json";
 import victoriaAsset from "@/assets/victoria-secret.png.asset.json";
+import { perfumeGroups } from "@/data/perfumes";
 
-const TITLE = "Importados Caballito | AirPods y fundas en CABA";
+const TITLE = "Importados Caballito | Tecnología y perfumes en CABA";
 const DESC =
-  "Importados Caballito: AirPods 2 Pro, fundas para todos los modelos y accesorios. Envíos a todo el país desde Caballito, CABA.";
+  "Importados Caballito: AirPods, fundas, accesorios y perfumes importados de 100 ml. Envíos a todo el país desde Caballito, CABA.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -167,6 +168,7 @@ function Index() {
           <Logo />
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#productos" className="transition-colors hover:text-foreground">Productos</a>
+             <a href="#perfumes" className="transition-colors hover:text-foreground">Perfumes</a>
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
             <a href="#contacto" className="transition-colors hover:text-foreground">Contacto</a>
           </nav>
@@ -291,6 +293,83 @@ function Index() {
             ))}
           </div>
         </section>
+
+         {/* Perfumes */}
+         <section id="perfumes" className="border-t border-border bg-card/20">
+           <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+             <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+               <div>
+                 <p className="text-xs font-semibold tracking-[0.2em] text-primary">NUEVO CATÁLOGO</p>
+                 <h2 className="mt-2 font-display text-3xl tracking-tight text-foreground md:text-4xl">
+                   Perfumes importados
+                 </h2>
+                 <p className="mt-3 max-w-xl text-muted-foreground">
+                   Fragancias de 100 ml. Consultá disponibilidad por mensaje directo.
+                 </p>
+               </div>
+               <IgChatButton
+                 variant="outline"
+                 mensaje="¡Hola Importados Caballito! 👋 Vi el catálogo de perfumes de 100 ml y quiero conocer las opciones disponibles ✨ ¿Me ayudan a elegir mi próxima fragancia?"
+               >
+                 <Instagram /> Consultar disponibilidad
+               </IgChatButton>
+             </div>
+
+             <div className="mt-12 space-y-14">
+               {perfumeGroups.map((grupo) => (
+                 <section key={grupo.marca} aria-labelledby={`perfume-${grupo.marca.replaceAll(" ", "-")}`}>
+                   <div className="mb-5 flex items-center gap-4">
+                     <h3
+                       id={`perfume-${grupo.marca.replaceAll(" ", "-")}`}
+                       className="shrink-0 font-display text-lg text-foreground sm:text-xl"
+                     >
+                       {grupo.marca}
+                     </h3>
+                     <span className="h-px w-full bg-border" />
+                   </div>
+                   <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                     {grupo.perfumes.map((perfume) => (
+                       <article
+                         key={`${grupo.marca}-${perfume.nombre}`}
+                         className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+                       >
+                         <div className="overflow-hidden bg-muted">
+                           <img
+                             src={perfume.img}
+                             alt={`Perfume ${grupo.marca} ${perfume.nombre}`}
+                             loading="lazy"
+                             width={700}
+                             height={700}
+                             className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                           />
+                         </div>
+                         <div className="flex flex-1 flex-col p-4 sm:p-5">
+                           <p className="text-[10px] font-semibold tracking-[0.16em] text-primary sm:text-xs">
+                             {grupo.marca}
+                           </p>
+                           <h4 className="mt-1 font-display text-base text-card-foreground sm:text-lg">
+                             {perfume.nombre}
+                           </h4>
+                           <span className="mt-3 w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                             100 ml
+                           </span>
+                           <IgChatButton
+                             size="sm"
+                             variant="secondary"
+                             className="mt-5 w-full text-xs sm:text-sm"
+                             mensaje={`¡Hola Importados Caballito! 👋 Vi el perfume ${grupo.marca} ${perfume.nombre} de 100 ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`}
+                           >
+                             <Instagram /> Consultar por IG
+                           </IgChatButton>
+                         </div>
+                       </article>
+                     ))}
+                   </div>
+                 </section>
+               ))}
+             </div>
+           </div>
+         </section>
 
         {/* Envíos */}
         <section id="envios" className="border-y border-border bg-card/40">
