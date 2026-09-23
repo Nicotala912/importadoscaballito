@@ -51,7 +51,7 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       },
       {
         "nombre": "9PM Rebel",
-        "img": "/__l5e/assets-v1/3d02426d-f47f-4b63-a09e-ce2c1bc00db3/afnan-9pm-rebel.webp"
+        "img": "/__l5e/assets-v1/d4877396-7967-4811-954a-2c5d526a2b62/afnan-9pm-rebel.png"
       },
       {
         "nombre": "9PM Elixir",
@@ -75,7 +75,7 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       },
       {
         "nombre": "Supremacy",
-        "img": "/__l5e/assets-v1/32a371cd-16ab-43ca-8606-43129af3f953/afnan-supremacy.webp"
+        "img": "/__l5e/assets-v1/1185c6e2-8de7-48a2-8757-3840f903c02e/afnan-supremacy.png"
       }
     ]
   },
