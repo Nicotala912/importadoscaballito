@@ -350,9 +350,12 @@ function Index() {
                            <h4 className="mt-1 font-display text-base text-card-foreground sm:text-lg">
                              {perfume.nombre}
                            </h4>
-                           <span className="mt-3 w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-                             100 ml
-                           </span>
+                            <div className="mt-3 flex items-center gap-2">
+                              <span className="w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                                100 ml
+                              </span>
+                              <span className="font-display text-lg text-primary">{perfume.precio}</span>
+                            </div>
                            <IgChatButton
                              size="sm"
                              variant="secondary"
