@@ -371,6 +371,22 @@ function Index() {
                  </section>
                ))}
              </div>
+
+              <div className="mt-16 flex flex-col gap-5 border-t border-border pt-10 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="font-display text-2xl text-foreground">¿Buscás otro perfume?</h3>
+                  <p className="mt-2 max-w-xl text-sm text-muted-foreground sm:text-base">
+                    Tenemos más fragancias disponibles además de las publicadas. Consultanos y te
+                    ayudamos a encontrar la que buscás.
+                  </p>
+                </div>
+                <IgChatButton
+                  className="shrink-0"
+                  mensaje="¡Hola Importados Caballito! 👋 Estoy buscando un perfume que no vi publicado en el catálogo ✨ ¿Qué otras fragancias tienen disponibles?"
+                >
+                  <Instagram /> Consultar otros perfumes
+                </IgChatButton>
+              </div>
            </div>
          </section>
 
