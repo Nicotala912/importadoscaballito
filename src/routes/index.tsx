@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Instagram, MapPin, Truck, ShieldCheck, Headphones, Copy, Check } from "lucide-react";
+import { Instagram, MapPin, Truck, ShieldCheck, Headphones, Copy, Check, Search, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -144,6 +144,146 @@ const productos = [
   },
 ];
 
+function normalizar(s: string) {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+const buscarIndex = [
+  ...productos.map((p) => ({
+    key: `producto-${p.nombre}`,
+    tipo: "Producto",
+    marca: "",
+    nombre: p.nombre,
+    desc: p.desc,
+    img: p.img,
+    precio: null as string | null,
+    mensaje: p.mensaje,
+  })),
+  ...perfumeGroups.flatMap((g) =>
+    g.perfumes.map((p) => ({
+      key: `perfume-${g.marca}-${p.nombre}`,
+      tipo: "Perfume",
+      marca: g.marca,
+      nombre: p.nombre,
+      desc: "Fragancia importada de 100 ml.",
+      img: p.img,
+      precio: p.precio,
+      mensaje: `¡Hola Importados Caballito! 👋 Vi el perfume ${g.marca} ${p.nombre} de 100 ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`,
+    })),
+  ),
+];
+
+function Buscar() {
+  const [query, setQuery] = useState("");
+  const limpio = normalizar(query.trim());
+  const resultados = limpio
+    ? buscarIndex.filter((item) => normalizar(`${item.marca} ${item.nombre} ${item.tipo}`).includes(limpio))
+    : [];
+
+  return (
+    <section id="buscar" className="border-b border-border">
+      <div className="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <h2 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
+          Buscá lo que vendemos
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Perfumes, AirPods, fundas y accesorios: escribí y te mostramos lo que tenemos.
+        </p>
+
+        <div className="relative mt-5">
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Ej: Yara, Hawas, 9PM, AirPods, funda..."
+            aria-label="Buscar productos y perfumes"
+            className="w-full rounded-full border border-border bg-card py-3.5 pl-11 pr-11 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
+          />
+          {query !== "" && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              aria-label="Limpiar búsqueda"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1.5 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
+        </div>
+
+        {query !== "" && (
+          resultados.length > 0 ? (
+            <div className="mt-8">
+              <p className="text-sm text-muted-foreground">
+                {resultados.length} {resultados.length === 1 ? "resultado" : "resultados"} para “{query}”
+              </p>
+              <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                {resultados.map((item) => (
+                  <article
+                    key={item.key}
+                    className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+                  >
+                    <div className="overflow-hidden bg-muted">
+                      <img
+                        src={item.img}
+                        alt={item.marca ? `Perfume ${item.marca} ${item.nombre}` : item.nombre}
+                        loading="lazy"
+                        width={700}
+                        height={700}
+                        className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col p-4 sm:p-5">
+                      <p className="text-[10px] font-semibold tracking-[0.16em] text-primary sm:text-xs">
+                        {item.marca || item.tipo}
+                      </p>
+                      <h4 className="mt-1 font-display text-base text-card-foreground sm:text-lg">
+                        {item.nombre}
+                      </h4>
+                      <p className="mt-1.5 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
+                        {item.desc}
+                      </p>
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <span className="w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
+                          {item.tipo === "Perfume" ? "100 ml" : item.tipo}
+                        </span>
+                        {item.precio && (
+                          <span className="font-display text-lg text-primary">{item.precio}</span>
+                        )}
+                      </div>
+                      <IgChatButton
+                        size="sm"
+                        variant="secondary"
+                        className="mt-5 w-full text-xs sm:text-sm"
+                        mensaje={item.mensaje}
+                      >
+                        <Instagram /> Consultar por IG
+                      </IgChatButton>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="mt-8 rounded-3xl border border-border bg-card/60 p-8 text-center">
+              <p className="font-display text-lg text-foreground">No encontramos “{query}”</p>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Tenemos más productos de los publicados. Preguntanos por lo que buscás.
+              </p>
+              <IgChatButton
+                className="mt-5"
+                mensaje={`¡Hola Importados Caballito! 👋 Buscaba "${query}" en su página ✨ ¿Lo tienen o tienen algo parecido?`}
+              >
+                <Instagram /> Consultar por IG
+              </IgChatButton>
+            </div>
+          )
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Logo() {
   return (
     <div className="flex items-center gap-3">
@@ -167,6 +307,7 @@ function Index() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <Logo />
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+            <a href="#buscar" className="transition-colors hover:text-foreground">Buscar</a>
             <a href="#productos" className="transition-colors hover:text-foreground">Productos</a>
              <a href="#perfumes" className="transition-colors hover:text-foreground">Perfumes</a>
             <a href="#envios" className="transition-colors hover:text-foreground">Envíos</a>
@@ -245,6 +386,8 @@ function Index() {
             ))}
           </div>
         </section>
+
+        <Buscar />
 
         {/* Productos */}
         <section id="productos" className="mx-auto max-w-6xl px-5 py-16 md:py-24">
