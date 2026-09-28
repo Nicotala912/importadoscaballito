@@ -232,6 +232,51 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
     ]
   },
   {
+    "marca": "RASASI HAWAS",
+    "perfumes": [
+      {
+        "nombre": "Ice",
+        "img": "/__l5e/assets-v1/0052521c-deb7-4e8e-b36e-18542800d9e5/rasasi-hawas-ice.webp",
+        "precio": "$65.000"
+      },
+      {
+        "nombre": "Fire",
+        "img": "/__l5e/assets-v1/170dc614-36d5-44f9-8740-c980bddff07b/rasasi-hawas-fire.webp",
+        "precio": "$70.000"
+      },
+      {
+        "nombre": "Malibu",
+        "img": "/__l5e/assets-v1/1f73a167-db55-4338-9a80-e1f5d9c246df/rasasi-hawas-malibu.webp",
+        "precio": "$65.000"
+      },
+      {
+        "nombre": "Verde",
+        "img": "/__l5e/assets-v1/f8083216-6edd-41e0-aba6-de6f85fa6b55/rasasi-hawas-verde.webp",
+        "precio": "$65.000"
+      },
+      {
+        "nombre": "Tropical",
+        "img": "/__l5e/assets-v1/b1845065-c00c-4973-a7f0-4bbfb0a6361c/rasasi-hawas-tropical.webp",
+        "precio": "$60.000"
+      },
+      {
+        "nombre": "Elixir",
+        "img": "/__l5e/assets-v1/646b5ee7-c62f-484a-97a5-eaa0243a285e/rasasi-hawas-elixir.webp",
+        "precio": "$70.000"
+      },
+      {
+        "nombre": "Kobra",
+        "img": "/__l5e/assets-v1/29982239-8348-4a36-b2da-8361a3e6480d/rasasi-hawas-kobra.webp",
+        "precio": "$70.000"
+      },
+      {
+        "nombre": "Black",
+        "img": "/__l5e/assets-v1/55035e7e-183d-465f-b9db-2d5b431da77a/rasasi-hawas-black.webp",
+        "precio": "$70.000"
+      }
+    ]
+  },
+  {
     "marca": "ARMAF CLUB DE NUIT",
     "perfumes": [
       {
