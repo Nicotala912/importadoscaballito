@@ -530,20 +530,27 @@ function Index() {
                    </div>
                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                      {grupo.perfumes.map((perfume) => (
-                       <article
-                         key={`${grupo.marca}-${perfume.nombre}`}
-                         className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
-                       >
-                         <div className="overflow-hidden bg-muted">
-                           <img
-                             src={perfume.img}
-                             alt={`Perfume ${grupo.marca} ${perfume.nombre}`}
-                             loading="lazy"
-                             width={700}
-                             height={700}
-                             className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                           />
-                         </div>
+                        <article
+                          key={`${grupo.marca}-${perfume.nombre}`}
+                          className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+                        >
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setPerfumeSel({ marca: grupo.marca, nombre: perfume.nombre, img: perfume.img, precio: perfume.precio, notas: perfume.notas })
+                            }
+                            aria-label={`Ver detalle de ${grupo.marca} ${perfume.nombre}`}
+                            className="block w-full cursor-pointer overflow-hidden bg-muted text-left"
+                          >
+                            <img
+                              src={perfume.img}
+                              alt={`Perfume ${grupo.marca} ${perfume.nombre}`}
+                              loading="lazy"
+                              width={700}
+                              height={700}
+                              className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </button>
                          <div className="flex flex-1 flex-col p-4 sm:p-5">
                            <p className="text-[10px] font-semibold tracking-[0.16em] text-primary sm:text-xs">
                              {grupo.marca}
