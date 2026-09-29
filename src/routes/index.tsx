@@ -284,6 +284,62 @@ function Buscar() {
   );
 }
 
+type PerfumeSeleccionado = { marca: string; nombre: string; img: string; precio: string; notas: string };
+
+function PerfumeDetalle({
+  perfume,
+  onClose,
+}: {
+  perfume: PerfumeSeleccionado | null;
+  onClose: () => void;
+}) {
+  return (
+    <Dialog open={perfume !== null} onOpenChange={(v) => !v && onClose()}>
+      <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+        {perfume && (
+          <>
+            <div className="overflow-hidden rounded-2xl bg-muted">
+              <img
+                src={perfume.img}
+                alt={`Perfume ${perfume.marca} ${perfume.nombre}`}
+                width={700}
+                height={700}
+                className="aspect-square w-full object-cover"
+              />
+            </div>
+            <DialogHeader>
+              <p className="text-xs font-semibold tracking-[0.2em] text-primary">{perfume.marca}</p>
+              <DialogTitle className="font-display text-2xl">{perfume.nombre}</DialogTitle>
+              <DialogDescription className="sr-only">
+                Detalle del perfume {perfume.marca} {perfume.nombre}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex items-center gap-3">
+              <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+                100 ml
+              </span>
+              <span className="font-display text-2xl text-primary">{perfume.precio}</span>
+            </div>
+            <div>
+              <p className="text-xs font-semibold tracking-[0.16em] text-muted-foreground">
+                NOTAS DE LA FRAGANCIA
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-foreground">{perfume.notas}</p>
+            </div>
+            <IgChatButton
+              size="lg"
+              className="w-full shadow-glow"
+              mensaje={`¡Hola Importados Caballito! 👋 Quiero comprar el perfume ${perfume.marca} ${perfume.nombre} de 100 ml (${perfume.precio}) que vi en su página ✨ ¿Tienen stock? ¿Cómo sigo la compra? 🔥`}
+            >
+              <Instagram /> Comprar por Instagram
+            </IgChatButton>
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 function Logo() {
   return (
     <div className="flex items-center gap-3">
@@ -301,8 +357,10 @@ function Logo() {
 }
 
 function Index() {
+  const [perfumeSel, setPerfumeSel] = useState<PerfumeSeleccionado | null>(null);
   return (
     <div className="min-h-screen bg-background">
+      <PerfumeDetalle perfume={perfumeSel} onClose={() => setPerfumeSel(null)} />
       <header className="sticky top-0 z-30 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <Logo />
@@ -472,20 +530,27 @@ function Index() {
                    </div>
                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                      {grupo.perfumes.map((perfume) => (
-                       <article
-                         key={`${grupo.marca}-${perfume.nombre}`}
-                         className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
-                       >
-                         <div className="overflow-hidden bg-muted">
-                           <img
-                             src={perfume.img}
-                             alt={`Perfume ${grupo.marca} ${perfume.nombre}`}
-                             loading="lazy"
-                             width={700}
-                             height={700}
-                             className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                           />
-                         </div>
+                        <article
+                          key={`${grupo.marca}-${perfume.nombre}`}
+                          className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-300 hover:-translate-y-1"
+                        >
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setPerfumeSel({ marca: grupo.marca, nombre: perfume.nombre, img: perfume.img, precio: perfume.precio, notas: perfume.notas })
+                            }
+                            aria-label={`Ver detalle de ${grupo.marca} ${perfume.nombre}`}
+                            className="block w-full cursor-pointer overflow-hidden bg-muted text-left"
+                          >
+                            <img
+                              src={perfume.img}
+                              alt={`Perfume ${grupo.marca} ${perfume.nombre}`}
+                              loading="lazy"
+                              width={700}
+                              height={700}
+                              className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </button>
                          <div className="flex flex-1 flex-col p-4 sm:p-5">
                            <p className="text-[10px] font-semibold tracking-[0.16em] text-primary sm:text-xs">
                              {grupo.marca}
