@@ -237,7 +237,7 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       {
         "nombre": "Ice",
         "img": "/__l5e/assets-v1/0052521c-deb7-4e8e-b36e-18542800d9e5/rasasi-hawas-ice.webp",
-        "precio": "$65.000"
+        "precio": "$60.000"
       },
       {
         "nombre": "Fire",
