@@ -340,6 +340,18 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
         "notas": "Azafrán, jazmín, madera de cedro, ámbar gris y almizcle. Estilo Baccarat Rouge 540: dulce ambarado."
       },
       {
+        "nombre": "Sillage",
+        "img": "/__l5e/assets-v1/47982bac-63f4-4ded-92c4-98e33b5f3641/armaf-club-sillage.webp",
+        "precio": "$70.000",
+        "notas": "Bergamota, limón, piña, notas marinas, almizcle y ámbar. Fresco y elegante, estilo Creed Silver Mountain Water."
+      },
+      {
+        "nombre": "Iconic",
+        "img": "/__l5e/assets-v1/29a130bf-998e-4fef-903c-33fb22650c8c/armaf-club-iconic.webp",
+        "precio": "$70.000",
+        "notas": "Pomelo, limón, jengibre, ámbar y sándalo. Fresco amaderado, moderno y versátil."
+      },
+      {
         "nombre": "Urban Man",
         "img": "/__l5e/assets-v1/0dc43b51-ad6c-4644-a882-c6f396fb3ca0/armaf-club-urban-man.webp",
         "precio": "$52.000",
