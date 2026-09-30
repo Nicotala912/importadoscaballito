@@ -346,5 +346,40 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
         "notas": "Bergamota, cardamomo, lavanda, vetiver y almizcle. Fresco especiado, ideal para uso diario."
       }
     ]
+  },
+  {
+    "marca": "BHARARA",
+    "perfumes": [
+      {
+        "nombre": "King",
+        "img": "/__l5e/assets-v1/20a12460-cadd-4ba7-a840-dd35d70d513f/bharara-king.webp",
+        "precio": "$60.000",
+        "notas": "Naranja, bergamota y limón; corazón frutal y fondo de almizcle blanco, ámbar y vainilla. Cítrico, frutal y cálido."
+      },
+      {
+        "nombre": "Bleu",
+        "img": "/__l5e/assets-v1/27de0669-72b8-4460-b24b-43b030e5a5ba/bharara-bleu.webp",
+        "precio": "$80.000",
+        "notas": "Ron, pimienta negra, bergamota y cardamomo; corazón de tabaco, pachulí y ámbar; fondo de caramelo, vainilla y sándalo. Especiado y cálido."
+      },
+      {
+        "nombre": "Soleil",
+        "img": "/__l5e/assets-v1/70161448-0aac-46f9-8ae1-4ebfd86f7cf8/bharara-soleil.webp",
+        "precio": "$70.000",
+        "notas": "Cítricos sicilianos y frutos rojos; corazón de jazmín, sándalo y madera de cachemira; fondo de avellana, chocolate y vainilla. Frutal gourmand."
+      },
+      {
+        "nombre": "Chocolate",
+        "img": "/__l5e/assets-v1/e14c496f-df88-4279-9238-aa3706d4f89b/bharara-chocolate.webp",
+        "precio": "$70.000",
+        "notas": "Bergamota, canela y cardamomo; corazón de dátil, praliné y nardo; fondo de vainilla, haba tonka, oud y almizcle. Dulce y especiado."
+      },
+      {
+        "nombre": "Champagne Pink",
+        "img": "/__l5e/assets-v1/563ebfda-bc22-4144-88ec-05364509bfda/bharara-pink.webp",
+        "precio": "$80.000",
+        "notas": "Notas verdes y acuáticas; corazón de jazmín, rosa, caramelo y nardo; fondo de vetiver, ámbar, sándalo y vainilla. Floral y suave."
+      }
+    ]
   }
 ];
