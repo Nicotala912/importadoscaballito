@@ -373,12 +373,6 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
         "img": "/__l5e/assets-v1/e14c496f-df88-4279-9238-aa3706d4f89b/bharara-chocolate.webp",
         "precio": "$70.000",
         "notas": "Bergamota, canela y cardamomo; corazón de dátil, praliné y nardo; fondo de vainilla, haba tonka, oud y almizcle. Dulce y especiado."
-      },
-      {
-        "nombre": "Champagne Pink",
-        "img": "/__l5e/assets-v1/563ebfda-bc22-4144-88ec-05364509bfda/bharara-pink.webp",
-        "precio": "$80.000",
-        "notas": "Notas verdes y acuáticas; corazón de jazmín, rosa, caramelo y nardo; fondo de vetiver, ámbar, sándalo y vainilla. Floral y suave."
       }
     ]
   }
