@@ -185,6 +185,47 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
     ]
   },
   {
+    "marca": "LATTAFA",
+    "perfumes": [
+      {
+        "nombre": "The Kingdom Men",
+        "img": "/__l5e/assets-v1/824e39f2-fa95-41c0-82a1-b9616b5d6e51/lattafa-the-kingdom.webp",
+        "precio": "$65.000",
+        "notas": "Salvia, lavanda y menta; corazón de tabaco, vainilla y flor de azahar; fondo de benjuí, haba tonka y ládano. Aromático y cálido."
+      },
+      {
+        "nombre": "Eclaire",
+        "img": "/__l5e/assets-v1/5a4a5aae-0027-4ae0-9945-b21e1cb49142/lattafa-eclaire.webp",
+        "precio": "$60.000",
+        "notas": "Caramelo, leche y azúcar; flores blancas y miel; fondo de vainilla, praliné y almizcle. Dulce y cremoso."
+      },
+      {
+        "nombre": "Eclaire Banoffi",
+        "img": "/__l5e/assets-v1/cdcc1b0b-fac2-4d59-85a3-a0febe102c38/lattafa-eclaire-banoffi.webp",
+        "precio": "$55.000",
+        "notas": "Crema de banana y crema batida; dulce de leche; fondo de vainilla, praliné, galleta y almizcle. Gourmand de postre."
+      },
+      {
+        "nombre": "Eclaire Pistache",
+        "img": "/__l5e/assets-v1/b24a60f9-d108-44f2-9450-c1273654a234/lattafa-eclaire-pistache.webp",
+        "precio": "$60.000",
+        "notas": "Crema de pistacho y pistacho tostado; crema pastelera, coco y cacao; fondo de vainilla, leche y almizcle. Gourmand cremoso."
+      },
+      {
+        "nombre": "Emaan",
+        "img": "/__l5e/assets-v1/5006c801-3a62-4bae-afa2-8da2c03effbd/lattafa-emaan.webp",
+        "precio": "$62.000",
+        "notas": "Bergamota, grosella negra y flor de azahar; nardo, jazmín y caléndula; fondo de vainilla, almizcle, pachulí y cedro. Floral chipre."
+      },
+      {
+        "nombre": "Sakeena",
+        "img": "/__l5e/assets-v1/d6277365-da23-49f4-80d2-f80ba19b0a57/lattafa-sakeena.webp",
+        "precio": "$62.000",
+        "notas": "Maracuyá, mandarina y notas ozónicas; frambuesa, rosa, flor de azahar y sal marina; fondo de praliné, toffee, almizcle y vainilla. Frutal gourmand."
+      }
+    ]
+  },
+  {
     "marca": "LATTAFA BADE'E AL OUD",
     "perfumes": [
       {
