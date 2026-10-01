@@ -496,7 +496,7 @@ function Index() {
                     className="mt-6 w-full"
                     mensaje={p.mensaje}
                   >
-                    <Instagram /> Consultar precio por IG
+                    <Instagram /> Comprar por Instagram
                   </IgChatButton>
                 </div>
               </article>
