@@ -1,0 +1,1 @@
+- [ ] Agregar seis perfumes Lattafa al catálogo con precios, fotos y notas, y comprobar su visualización.
