@@ -114,22 +114,25 @@ const productos = [
     nombre: "AirPods 2 Pro",
     desc: "Audio premium, cancelación de ruido y la mejor calidad del mercado.",
     img: airpodsAsset.url,
+    precio: "$30.000",
     tags: ["Audio premium", "ANC", "Garantía"],
     mensaje:
-      "¡Hola Importados Caballito! 👋 Vi los AirPods 2 Pro en su página y me encantaron 🎧 ¿Me pasan precio, stock y formas de pago? Quiero aprovechar la promo 🔥",
+      "¡Hola Importados Caballito! 👋 Quiero comprar los AirPods 2 Pro ($30.000) que vi en su página 🎧 ¿Tienen stock? ¿Cómo sigo la compra? 🔥",
   },
   {
     nombre: "Fundas",
     desc: "Todos los modelos, el color que más te guste. Calidad premium.",
     img: fundasAsset.url,
+    precio: "$8.000",
     tags: ["Todos los modelos", "+30 colores"],
     mensaje:
-      "¡Hola Importados Caballito! 👋 Estoy buscando una funda 📱 ¿Qué colores tienen disponibles para mi modelo? Me interesa precio y envío 💚",
+      "¡Hola Importados Caballito! 👋 Quiero comprar una funda ($8.000) 📱 ¿Qué colores tienen disponibles para mi modelo? ¿Cómo sigo la compra? 💚",
   },
   {
     nombre: "Accesorios",
     desc: "Cables, cargadores y power banks para tu día a día.",
     img: accesoriosAsset.url,
+    precio: null as string | null,
     tags: ["Cables", "Cargadores", "Power banks"],
     mensaje:
       "¡Hola Importados Caballito! 👋 Me interesan los accesorios (cables, cargadores o power bank) ⚡ ¿Me pasan precios y qué tienen en stock hoy?",
@@ -138,9 +141,10 @@ const productos = [
     nombre: "Victoria's Secret",
     desc: "Body mist originales importados. Fragancias que duran todo el día.",
     img: victoriaAsset.url,
+    precio: "$35.000",
     tags: ["Originales", "Body mist", "250ml"],
     mensaje:
-      "¡Hola Importados Caballito! 👋 Vi los Victoria's Secret en su página 🌸 ¿Qué fragancias tienen disponibles? Me pasan precio y envío por favor ✨",
+      "¡Hola Importados Caballito! 👋 Quiero comprar un Victoria's Secret ($35.000) 🌸 ¿Qué fragancias tienen disponibles? ¿Cómo sigo la compra? ✨",
   },
 ];
 
@@ -156,7 +160,7 @@ const buscarIndex = [
     nombre: p.nombre,
     desc: p.desc,
     img: p.img,
-    precio: null as string | null,
+    precio: p.precio,
     mensaje: p.mensaje,
   })),
   ...perfumeGroups.flatMap((g) =>
@@ -470,7 +474,12 @@ function Index() {
                   className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="p-6">
-                  <h3 className="font-display text-xl text-card-foreground">{p.nombre}</h3>
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-display text-xl text-card-foreground">{p.nombre}</h3>
+                    {p.precio && (
+                      <span className="font-display text-lg text-primary">{p.precio}</span>
+                    )}
+                  </div>
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {p.tags.map((t) => (
@@ -487,7 +496,7 @@ function Index() {
                     className="mt-6 w-full"
                     mensaje={p.mensaje}
                   >
-                    <Instagram /> Consultar precio por IG
+                    <Instagram /> Comprar por Instagram
                   </IgChatButton>
                 </div>
               </article>
