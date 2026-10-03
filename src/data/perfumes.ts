@@ -440,7 +440,7 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       },
       {
         "nombre": "Khamrah Qahwa",
-        "img": "/__l5e/assets-v1/e095be27-6f38-4c72-a9c6-01c4bb0f4f6d/khamrah-qahwa.webp",
+        "img": "/__l5e/assets-v1/1a98bd0b-4180-417d-9631-8751d157cde7/khamrah-qahwa.webp",
         "precio": "$55.000",
         "notas": "Canela, cardamomo y jengibre; praliné, frutas confitadas y flores blancas; fondo de café, vainilla, haba tonka y benjuí. Café dulce y envolvente."
       },
@@ -452,13 +452,13 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       },
       {
         "nombre": "Khamrah Waha",
-        "img": "/__l5e/assets-v1/cba1b9be-e1be-4dcd-9a4f-6d1e56d2f262/khamrah-waha.webp",
+        "img": "/__l5e/assets-v1/168d413e-37cb-40b0-a001-7d6a2e08f958/khamrah-waha.webp",
         "precio": "$80.000",
         "notas": "Bergamota, yuzu, enebro y jengibre; pepino, sal marina, salvia e iris; fondo de vainilla, haba tonka y almizcle. Fresco aromático con fondo dulce."
       },
       {
         "nombre": "Khamrah Karaz",
-        "img": "/__l5e/assets-v1/d776a063-9d38-4a24-8a86-0e9a52a9e0af/khamrah-karaz.webp",
+        "img": "/__l5e/assets-v1/fae39f4d-3e87-442b-aa1d-d73e7d5d337a/khamrah-karaz.webp",
         "precio": "$65.000",
         "notas": "Cereza negra, frutos rojos y pimienta rosa; praliné, rosa y dátiles; fondo de vainilla, ámbar, almizcle y haba tonka. Cereza dulce y adictiva."
       }
@@ -475,19 +475,19 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
       },
       {
         "nombre": "Amber Oud Aqua Dubai",
-        "img": "/__l5e/assets-v1/98f6e5ac-0d1a-4f74-9b93-27c6a1b5c3a9/amber-oud-aqua-dubai.webp",
+        "img": "/__l5e/assets-v1/9dd299f4-78ca-4b62-bab9-e86980c924c2/amber-oud-aqua-dubai.webp",
         "precio": "$80.000",
         "notas": "Notas verdes, bergamota y mandarina; melón, ámbar, grosella negra y piña; fondo de almizcle, petitgrain, gálbano y vainilla. Fresco frutal de 60 ml."
       },
       {
         "nombre": "Amber Oud Dubai Night",
-        "img": "/__l5e/assets-v1/4b1e2d84-33c4-4a90-b6ac-bb7d3ec6b6d1/amber-oud-dubai-night.webp",
+        "img": "/__l5e/assets-v1/60ed9ee7-a765-4e19-982f-34304ecf3bdb/amber-oud-dubai-night.webp",
         "precio": "$80.000",
         "notas": "Azafrán, bergamota y elemí; oud, rosa búlgara y lirio de los valles; fondo de haba tonka, ámbar, almizcle blanco y musgo de roble. Nocturno y elegante."
       },
       {
         "nombre": "Amber Oud Ruby",
-        "img": "/__l5e/assets-v1/f0dc0e2a-0fb5-48a3-b0f8-cf9f3ef4d1c5/amber-oud-ruby.webp",
+        "img": "/__l5e/assets-v1/0be487f5-daa8-48aa-bb77-1621702a30d8/amber-oud-ruby.webp",
         "precio": "$80.000",
         "notas": "Azafrán y almendra amarga; cedro y jazmín egipcio; fondo de ámbar gris, notas amaderadas y almizcle. Dulce ámbar de estilo Baccarat."
       }
