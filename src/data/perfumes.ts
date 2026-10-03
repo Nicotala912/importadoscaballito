@@ -428,5 +428,69 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
         "notas": "Bergamota, canela y cardamomo; corazón de dátil, praliné y nardo; fondo de vainilla, haba tonka, oud y almizcle. Dulce y especiado."
       }
     ]
+  },
+  {
+    "marca": "LATTAFA KHAMRAH",
+    "perfumes": [
+      {
+        "nombre": "Khamrah",
+        "img": "/__l5e/assets-v1/82348a94-62d5-4bdb-b3e6-6c06a6e39da3/khamrah.webp",
+        "precio": "$50.000",
+        "notas": "Canela, nuez moscada y bergamota; dátiles, praliné y nardos; fondo de vainilla, haba tonka, benjuí y ámbar. Dulce especiado, estilo Angels' Share."
+      },
+      {
+        "nombre": "Khamrah Qahwa",
+        "img": "/__l5e/assets-v1/1a98bd0b-4180-417d-9631-8751d157cde7/khamrah-qahwa.webp",
+        "precio": "$55.000",
+        "notas": "Canela, cardamomo y jengibre; praliné, frutas confitadas y flores blancas; fondo de café, vainilla, haba tonka y benjuí. Café dulce y envolvente."
+      },
+      {
+        "nombre": "Khamrah Dukhan",
+        "img": "/__l5e/assets-v1/bf462c7d-c4d1-422c-9748-7cb4eb4ac573/khamrah-dukhan.webp",
+        "precio": "$55.000",
+        "notas": "Mandarina, pimienta y especias ahumadas; cisto, flor de azahar, incienso y pachulí; fondo de tabaco, ámbar, haba tonka y praliné. Ahumado cálido."
+      },
+      {
+        "nombre": "Khamrah Waha",
+        "img": "/__l5e/assets-v1/168d413e-37cb-40b0-a001-7d6a2e08f958/khamrah-waha.webp",
+        "precio": "$80.000",
+        "notas": "Bergamota, yuzu, enebro y jengibre; pepino, sal marina, salvia e iris; fondo de vainilla, haba tonka y almizcle. Fresco aromático con fondo dulce."
+      },
+      {
+        "nombre": "Khamrah Karaz",
+        "img": "/__l5e/assets-v1/fae39f4d-3e87-442b-aa1d-d73e7d5d337a/khamrah-karaz.webp",
+        "precio": "$65.000",
+        "notas": "Cereza negra, frutos rojos y pimienta rosa; praliné, rosa y dátiles; fondo de vainilla, ámbar, almizcle y haba tonka. Cereza dulce y adictiva."
+      }
+    ]
+  },
+  {
+    "marca": "AL HARAMAIN AMBER OUD",
+    "perfumes": [
+      {
+        "nombre": "Amber Oud",
+        "img": "/__l5e/assets-v1/a1f70389-98e7-41f5-844b-ce71a27ce221/amber-oud.webp",
+        "precio": "$80.000",
+        "notas": "Romero, bergamota, cedro y limón; especias y madera de guayaco; fondo de ámbar, almizcle y resinas. Ámbar amaderado clásico de 60 ml."
+      },
+      {
+        "nombre": "Amber Oud Aqua Dubai",
+        "img": "/__l5e/assets-v1/9dd299f4-78ca-4b62-bab9-e86980c924c2/amber-oud-aqua-dubai.webp",
+        "precio": "$80.000",
+        "notas": "Notas verdes, bergamota y mandarina; melón, ámbar, grosella negra y piña; fondo de almizcle, petitgrain, gálbano y vainilla. Fresco frutal de 60 ml."
+      },
+      {
+        "nombre": "Amber Oud Dubai Night",
+        "img": "/__l5e/assets-v1/60ed9ee7-a765-4e19-982f-34304ecf3bdb/amber-oud-dubai-night.webp",
+        "precio": "$80.000",
+        "notas": "Azafrán, bergamota y elemí; oud, rosa búlgara y lirio de los valles; fondo de haba tonka, ámbar, almizcle blanco y musgo de roble. Nocturno y elegante."
+      },
+      {
+        "nombre": "Amber Oud Ruby",
+        "img": "/__l5e/assets-v1/0be487f5-daa8-48aa-bb77-1621702a30d8/amber-oud-ruby.webp",
+        "precio": "$80.000",
+        "notas": "Azafrán y almendra amarga; cedro y jazmín egipcio; fondo de ámbar gris, notas amaderadas y almizcle. Dulce ámbar de estilo Baccarat."
+      }
+    ]
   }
 ];
