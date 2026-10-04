@@ -152,7 +152,19 @@ function normalizar(s: string) {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-const buscarIndex = [
+type BuscarItem = {
+  key: string;
+  tipo: string;
+  ml?: number;
+  marca: string;
+  nombre: string;
+  desc: string;
+  img: string;
+  precio: string | null;
+  mensaje: string;
+};
+
+const buscarIndex: BuscarItem[] = [
   ...productos.map((p) => ({
     key: `producto-${p.nombre}`,
     tipo: "Producto",
@@ -167,12 +179,13 @@ const buscarIndex = [
     g.perfumes.map((p) => ({
       key: `perfume-${g.marca}-${p.nombre}`,
       tipo: "Perfume",
+      ml: p.ml ?? 100,
       marca: g.marca,
       nombre: p.nombre,
-      desc: "Fragancia importada de 100 ml.",
+      desc: `Fragancia importada de ${p.ml ?? 100} ml.`,
       img: p.img,
       precio: p.precio,
-      mensaje: `¡Hola Importados Caballito! 👋 Vi el perfume ${g.marca} ${p.nombre} de 100 ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`,
+      mensaje: `¡Hola Importados Caballito! 👋 Vi el perfume ${g.marca} ${p.nombre} de ${p.ml ?? 100} ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`,
     })),
   ),
 ];
@@ -249,7 +262,7 @@ function Buscar() {
                       </p>
                       <div className="mt-3 flex flex-wrap items-center gap-2">
                         <span className="w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-                          {item.tipo === "Perfume" ? "100 ml" : item.tipo}
+                          {item.tipo === "Perfume" ? `${item.ml} ml` : item.tipo}
                         </span>
                         {item.precio && (
                           <span className="font-display text-lg text-primary">{item.precio}</span>
@@ -288,7 +301,7 @@ function Buscar() {
   );
 }
 
-type PerfumeSeleccionado = { marca: string; nombre: string; img: string; precio: string; notas: string };
+type PerfumeSeleccionado = { marca: string; nombre: string; img: string; precio: string; notas: string; ml?: number };
 
 function PerfumeDetalle({
   perfume,
@@ -320,7 +333,7 @@ function PerfumeDetalle({
             </DialogHeader>
             <div className="flex items-center gap-3">
               <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
-                100 ml
+                {perfume.ml ?? 100} ml
               </span>
               <span className="font-display text-2xl text-primary">{perfume.precio}</span>
             </div>
@@ -333,7 +346,7 @@ function PerfumeDetalle({
             <IgChatButton
               size="lg"
               className="w-full shadow-glow"
-              mensaje={`¡Hola Importados Caballito! 👋 Quiero comprar el perfume ${perfume.marca} ${perfume.nombre} de 100 ml (${perfume.precio}) que vi en su página ✨ ¿Tienen stock? ¿Cómo sigo la compra? 🔥`}
+              mensaje={`¡Hola Importados Caballito! 👋 Quiero comprar el perfume ${perfume.marca} ${perfume.nombre} de ${perfume.ml ?? 100} ml (${perfume.precio}) que vi en su página ✨ ¿Tienen stock? ¿Cómo sigo la compra? 🔥`}
             >
               <Instagram /> Comprar por Instagram
             </IgChatButton>
@@ -546,7 +559,7 @@ function Index() {
                           <button
                             type="button"
                             onClick={() =>
-                              setPerfumeSel({ marca: grupo.marca, nombre: perfume.nombre, img: perfume.img, precio: perfume.precio, notas: perfume.notas })
+                              setPerfumeSel({ marca: grupo.marca, nombre: perfume.nombre, img: perfume.img, precio: perfume.precio, notas: perfume.notas, ml: perfume.ml })
                             }
                             aria-label={`Ver detalle de ${grupo.marca} ${perfume.nombre}`}
                             className="block w-full cursor-pointer overflow-hidden bg-muted text-left"
@@ -569,7 +582,7 @@ function Index() {
                            </h4>
                             <div className="mt-3 flex items-center gap-2">
                               <span className="w-fit rounded-full border border-border px-2.5 py-1 text-[11px] text-muted-foreground">
-                                100 ml
+                                {perfume.ml ?? 100} ml
                               </span>
                               <span className="font-display text-lg text-primary">{perfume.precio}</span>
                             </div>
@@ -577,7 +590,7 @@ function Index() {
                              size="sm"
                              variant="secondary"
                              className="mt-5 w-full text-xs sm:text-sm"
-                             mensaje={`¡Hola Importados Caballito! 👋 Vi el perfume ${grupo.marca} ${perfume.nombre} de 100 ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`}
+                              mensaje={`¡Hola Importados Caballito! 👋 Vi el perfume ${grupo.marca} ${perfume.nombre} de ${perfume.ml ?? 100} ml en su página ✨ ¿Tienen disponibilidad? Me gustaría recibir más información.`}
                            >
                              <Instagram /> Consultar por IG
                            </IgChatButton>
