@@ -1,4 +1,4 @@
-export type Perfume = { nombre: string; img: string; precio: string; notas: string };
+export type Perfume = { nombre: string; img: string; precio: string; notas: string; ml?: number };
 
 export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
   {
@@ -469,26 +469,30 @@ export const perfumeGroups: { marca: string; perfumes: Perfume[] }[] = [
     "perfumes": [
       {
         "nombre": "Amber Oud",
-        "img": "/__l5e/assets-v1/a1f70389-98e7-41f5-844b-ce71a27ce221/amber-oud.webp",
+        "img": "/__l5e/assets-v1/00956d71-2972-4282-8598-3caf1abebbad/amber-oud-gold.webp",
         "precio": "$80.000",
-        "notas": "Romero, bergamota, cedro y limón; especias y madera de guayaco; fondo de ámbar, almizcle y resinas. Ámbar amaderado clásico de 60 ml."
+        "ml": 60,
+        "notas": "Romero, bergamota, cedro y limón; especias y madera de guayaco; fondo de ámbar, almizcle y resinas. Ámbar amaderado clásico."
       },
       {
         "nombre": "Amber Oud Aqua Dubai",
         "img": "/__l5e/assets-v1/9dd299f4-78ca-4b62-bab9-e86980c924c2/amber-oud-aqua-dubai.webp",
         "precio": "$80.000",
-        "notas": "Notas verdes, bergamota y mandarina; melón, ámbar, grosella negra y piña; fondo de almizcle, petitgrain, gálbano y vainilla. Fresco frutal de 60 ml."
+        "ml": 60,
+        "notas": "Notas verdes, bergamota y mandarina; melón, ámbar, grosella negra y piña; fondo de almizcle, petitgrain, gálbano y vainilla. Fresco frutal."
       },
       {
         "nombre": "Amber Oud Dubai Night",
         "img": "/__l5e/assets-v1/60ed9ee7-a765-4e19-982f-34304ecf3bdb/amber-oud-dubai-night.webp",
         "precio": "$80.000",
+        "ml": 60,
         "notas": "Azafrán, bergamota y elemí; oud, rosa búlgara y lirio de los valles; fondo de haba tonka, ámbar, almizcle blanco y musgo de roble. Nocturno y elegante."
       },
       {
         "nombre": "Amber Oud Ruby",
         "img": "/__l5e/assets-v1/0be487f5-daa8-48aa-bb77-1621702a30d8/amber-oud-ruby.webp",
         "precio": "$80.000",
+        "ml": 60,
         "notas": "Azafrán y almendra amarga; cedro y jazmín egipcio; fondo de ámbar gris, notas amaderadas y almizcle. Dulce ámbar de estilo Baccarat."
       }
     ]
