@@ -152,7 +152,19 @@ function normalizar(s: string) {
   return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
-const buscarIndex = [
+type BuscarItem = {
+  key: string;
+  tipo: string;
+  ml?: number;
+  marca: string;
+  nombre: string;
+  desc: string;
+  img: string;
+  precio: string | null;
+  mensaje: string;
+};
+
+const buscarIndex: BuscarItem[] = [
   ...productos.map((p) => ({
     key: `producto-${p.nombre}`,
     tipo: "Producto",
